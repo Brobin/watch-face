@@ -1,4 +1,4 @@
 <fonts>
-    <font id="Roboto100" antialias="true" filename="Roboto100.fnt" filter="0123456789:"/>
-    <font id="BatteryIcons" antialias="true" filename="BatteryIcons.fnt"/>
+    <font id="RobotoMonoLarge" antialias="true" filename="RobotoMonoLarge.fnt"/>
+    <font id="RobotoMonoSmall" antialias="true" filename="RobotoMonoSmall.fnt"/>
 </fonts>
