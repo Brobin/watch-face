@@ -60,6 +60,7 @@ class AresView extends WatchUi.WatchFace {
         colon.setText(":");
 
         var minute = View.findDrawableById("MinuteDisplay");
+        minute.setColor("0xE60000".toFloat());
         minute.setText(time.min.format("%02d"));
     }
 

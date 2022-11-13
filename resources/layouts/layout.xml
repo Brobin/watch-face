@@ -1,11 +1,11 @@
 <layout id="WatchFace">
     <drawable id="battery" class="Battery"/>
 
-    <label id="HeartRateDisplay" x="center" y="20%" font="@Fonts.RobotoMonoSmall" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE"/>
+    <label id="HeartRateDisplay" x="center" y="20%" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE"/>
     
-    <label id="HourDisplay" x="45%" y="center" font="@Fonts.RobotoMonoLarge" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_WHITE" />
-    <label id="ColonDisplay" x="center" y="center" font="@Fonts.RobotoMonoLarge" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
-    <label id="MinuteDisplay" x="55%" y="center" font="@Fonts.RobotoMonoLarge" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_RED" />
+    <label id="HourDisplay" x="45%" y="center" font="@Fonts.RobotoLarge" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_WHITE" />
+    <label id="ColonDisplay" x="center" y="center" font="@Fonts.RobotoLarge" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
+    <label id="MinuteDisplay" x="55%" y="center" font="@Fonts.RobotoLarge" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_RED" />
 
-    <label id="DateDisplay" x="center" y="70%" font="@Fonts.RobotoMonoSmall" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
+    <label id="DateDisplay" x="center" y="70%" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
 </layout>
