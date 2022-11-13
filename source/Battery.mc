@@ -17,7 +17,7 @@ class Battery extends WatchUi.Drawable {
         var width = 32;
         var height = 16;
         var xStart = (dc.getWidth() - width) / 2;
-        var yStart = 20;
+        var yStart = 10;
         
         // Draw battery container
         dc.setPenWidth(1);

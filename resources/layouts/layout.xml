@@ -1,11 +1,18 @@
 <layout id="WatchFace">
     <drawable id="battery" class="Battery"/>
 
-    <label id="HeartRateDisplay" x="center" y="20%" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE"/>
+    <label id="DateDisplay" x="center" y="15%" font="@Fonts.RobotoSmall" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
     
-    <label id="HourDisplay" x="45%" y="center" font="@Fonts.RobotoLarge" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_WHITE" />
-    <label id="ColonDisplay" x="center" y="center" font="@Fonts.RobotoLarge" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
-    <label id="MinuteDisplay" x="55%" y="center" font="@Fonts.RobotoLarge" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_RED" />
+    <label id="HourDisplay" x="45%" y="25%" font="@Fonts.RobotoLarge" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_WHITE" />
+    <label id="ColonDisplay" x="center" y="22%" font="@Fonts.RobotoLarge" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
+    <label id="MinuteDisplay" x="55%" y="25%" font="@Fonts.RobotoLarge" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_DK_RED" />
 
-    <label id="DateDisplay" x="center" y="70%" font="Graphics.FONT_SMALL" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
+    <label id="StepsDisplay" x="25%" y="70%" font="@Fonts.RobotoSmall" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE"/>
+    <label id="StepsIcon"  x="25%" y="80%" font="@Fonts.Icons" justification="Graphics.TEXT_JUSTIFY_CENTER" color="0x4CAF50"/>
+
+    <label id="HeartRateDisplay" x="50%" y="70%" font="@Fonts.RobotoSmall" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE"/>
+    <label id="HeartRateIcon"  x="50%" y="80%" font="@Fonts.Icons" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_DK_RED"/>
+
+    <label id="CaloriesDisplay" x="75%" y="70%" font="@Fonts.RobotoSmall" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE"/>
+    <label id="CaloriesIcon"  x="75%" y="80%" font="@Fonts.Icons" justification="Graphics.TEXT_JUSTIFY_CENTER" color="0xFF9900"/>
 </layout>

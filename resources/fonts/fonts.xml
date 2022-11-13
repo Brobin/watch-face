@@ -1,3 +1,5 @@
 <fonts>
+    <font id="Icons" antialias="true" filename="Icons.fnt"/>
     <font id="RobotoLarge" antialias="true" filename="RobotoLarge.fnt" filter="0123456789:"/>
+    <font id="RobotoSmall" antialias="true" filename="RobotoSmall.fnt"/>
 </fonts>

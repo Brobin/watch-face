@@ -19,11 +19,22 @@ class AresView extends WatchUi.WatchFace {
     }
 
     function onUpdate(dc) {
+        setStepsDisplay();
         setHeartRateDisplay();
+        setCaloriesDisplay();
         setTimeDisplay();
         setDateDisplay();
 
         View.onUpdate(dc);
+    }
+
+    private function setStepsDisplay() {
+        var steps = ActivityMonitor .getInfo().steps.toString();		
+        var stepsDisplay = View.findDrawableById("StepsDisplay");
+        stepsDisplay.setText(steps);
+
+        var heartrateIcon = View.findDrawableById("StepsIcon");
+        heartrateIcon.setText("Å");
     }
 
     private function setHeartRateDisplay() {
@@ -41,6 +52,18 @@ class AresView extends WatchUi.WatchFace {
 
         var heartrateDisplay = View.findDrawableById("HeartRateDisplay");
         heartrateDisplay.setText(heartRate);
+
+        var heartrateIcon = View.findDrawableById("HeartRateIcon");
+        heartrateIcon.setText("l");
+    }
+
+    private function setCaloriesDisplay() {
+        var steps = ActivityMonitor.getInfo().calories.toString();		
+        var stepsDisplay = View.findDrawableById("CaloriesDisplay");
+        stepsDisplay.setText(steps);
+
+        var heartrateIcon = View.findDrawableById("CaloriesIcon");
+        heartrateIcon.setText("X");
     }
 
     private function setTimeDisplay() {
@@ -60,7 +83,6 @@ class AresView extends WatchUi.WatchFace {
         colon.setText(":");
 
         var minute = View.findDrawableById("MinuteDisplay");
-        minute.setColor("0xE60000".toFloat());
         minute.setText(time.min.format("%02d"));
     }
 
