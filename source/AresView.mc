@@ -19,7 +19,6 @@ class AresView extends WatchUi.WatchFace {
     }
 
     function onUpdate(dc) {
-        setBatteryDisplay();
         setHeartRateDisplay();
         setTimeDisplay();
         setDateDisplay();
@@ -27,38 +26,17 @@ class AresView extends WatchUi.WatchFace {
         View.onUpdate(dc);
     }
 
-    private function setBatteryDisplay() {
-        var battery = System.getSystemStats().battery;
-        var charging = System.getSystemStats().charging;
-        var character = "";
-
-        if (charging) {
-            character = "0";
-        } else if (battery >= 80) {
-            character = "/";
-        } else if (battery >= 50) {
-            character = ".";
-        } else if (battery >= 20) {
-            character = "-";
-        } else {
-            character = ",";
-        }
-
-        var batteryDisplay = View.findDrawableById("BatteryDisplay");
-        batteryDisplay.setText(character);
-    }
-
     private function setHeartRateDisplay() {
         var heartRate = "";
 
         if (ActivityMonitor has : getHeartRateHistory) {
-        var heartrateIterator = ActivityMonitor.getHeartRateHistory(1, true);
-        var currentHeartrate = heartrateIterator.next().heartRate;
-        if (currentHeartrate == ActivityMonitor.INVALID_HR_SAMPLE) {
-            heartRate = "";
-        } else {
-            heartRate = currentHeartrate.format("%d");
-        }
+            var heartrateIterator = ActivityMonitor.getHeartRateHistory(1, true);
+            var currentHeartrate = heartrateIterator.next().heartRate;
+            if (currentHeartrate == ActivityMonitor.INVALID_HR_SAMPLE) {
+                heartRate = "";
+            } else {
+                heartRate = currentHeartrate.format("%d");
+            }
         }
 
         var heartrateDisplay = View.findDrawableById("HeartRateDisplay");
