@@ -21,12 +21,16 @@ class Time extends WatchUi.Drawable {
             }
         }
 
-        var hourText = hours.format("%02d");
+        var hourText = hours.toString();
+        if (getApp().getProperty("PadHour")) {
+            hourText = hours.format("%02d");
+        }
+
         var colonText = ":";
         var minutesText = minutes.format("%02d");
 
-        var boldFont = WatchUi.loadResource( Rez.Fonts.ExoBold );
-        var thinFont = WatchUi.loadResource( Rez.Fonts.ExoLight );
+        var boldFont = WatchUi.loadResource(Rez.Fonts.ExoBold);
+        var thinFont = WatchUi.loadResource(Rez.Fonts.ExoLight);
 
         var hourDimensions = dc.getTextDimensions(hourText, boldFont);
         var colonWidth = dc.getTextWidthInPixels(colonText, thinFont);

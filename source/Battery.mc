@@ -1,17 +1,15 @@
+using Toybox.System;
 using Toybox.WatchUi;
 
 class Battery extends WatchUi.Drawable {
-    var battery;
 
     function initialize(options) {
         Drawable.initialize(options);
     }
 
-    function setBattery(batteryPct) {
-        battery = batteryPct;
-    }
-
     function draw(dc) {
+        var battery = System.getSystemStats().battery;
+
         var width = 32;
         var height = 16;
         var xStart = (dc.getWidth() - width) / 2;
@@ -26,6 +24,7 @@ class Battery extends WatchUi.Drawable {
         var xKnob = xStart + 32 + 1;
         dc.drawLine(xKnob, yStart + 4, xKnob, yStart + 12);
 
+        // Fill battery percentage
         if (battery >= 50) {
             dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);
         } else if (battery >= 30) {

@@ -5,6 +5,7 @@
     <string id="Date">Date</string>
 
     <string id="HourColor">Hour Color</string>
+    <string id="PadHour">Zero Pad Hour</string>
     <string id="MinuteColor">Minute Color</string>
     <string id="DateColor">Date Color</string>
 

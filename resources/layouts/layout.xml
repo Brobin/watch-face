@@ -1,10 +1,6 @@
 <layout id="WatchFace">
     <drawable id="Battery" class="Battery"/>
-
-    <label id="HeartRateIcon"  x="48%" y="20%" font="@Fonts.Icons" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_RED"/>
-    <label id="HeartRateDisplay" x="52%" y="20%" font="@Fonts.ExoSmall" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE"/>
-
+    <drawable id="HeartRate" class="HeartRate"/>
     <drawable id="Time" class="Time"/>
-
-    <label id="DateDisplay" x="center" y="72%" font="@Fonts.ExoSmall" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
+    <drawable id="Date" class="Date"/>
 </layout>

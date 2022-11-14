@@ -9,6 +9,10 @@
             </settingConfig>
         </setting>
 
+        <setting propertyKey="@Properties.PadHour" title="@Strings.PadHour">
+            <settingConfig type="boolean" />
+        </setting>
+
         <setting propertyKey="@Properties.MinuteColor" title="@Strings.MinuteColor">
             <settingConfig type="list">
                 <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
