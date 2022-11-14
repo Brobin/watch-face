@@ -19,62 +19,48 @@ class AresView extends WatchUi.WatchFace {
     }
 
     function onUpdate(dc) {
-        setStepsDisplay();
+        setBatteryDisplay();
         setHeartRateDisplay();
-        setCaloriesDisplay();
         setTimeDisplay();
         setDateDisplay();
 
         View.onUpdate(dc);
     }
 
-    private function setStepsDisplay() {
-        var steps = ActivityMonitor .getInfo().steps.toString();		
-        var stepsDisplay = View.findDrawableById("StepsDisplay");
-        stepsDisplay.setText(steps);
-
-        var heartrateIcon = View.findDrawableById("StepsIcon");
-        heartrateIcon.setText("Å");
+    private function setBatteryDisplay() {
+        var battery = View.findDrawableById("Battery");
+        battery.setBattery(System.getSystemStats().battery);
     }
 
     private function setHeartRateDisplay() {
-        var heartRate = "";
+        var heartRate = Activity.Info.currentHeartRate;
+        var heartRateString = "--";
 
-        if (ActivityMonitor has : getHeartRateHistory) {
+        if(heartRate == null) {
             var heartrateIterator = ActivityMonitor.getHeartRateHistory(1, true);
-            var currentHeartrate = heartrateIterator.next().heartRate;
-            if (currentHeartrate == ActivityMonitor.INVALID_HR_SAMPLE) {
-                heartRate = "";
-            } else {
-                heartRate = currentHeartrate.format("%d");
-            }
+            heartRate = heartrateIterator.next().heartRate;
+        }
+
+        if (heartRate != ActivityMonitor.INVALID_HR_SAMPLE) {
+            heartRateString = heartRate.format("%d");
         }
 
         var heartrateDisplay = View.findDrawableById("HeartRateDisplay");
-        heartrateDisplay.setText(heartRate);
+        heartrateDisplay.setText(heartRateString);
 
         var heartrateIcon = View.findDrawableById("HeartRateIcon");
         heartrateIcon.setText("l");
-    }
-
-    private function setCaloriesDisplay() {
-        var steps = ActivityMonitor.getInfo().calories.toString();		
-        var stepsDisplay = View.findDrawableById("CaloriesDisplay");
-        stepsDisplay.setText(steps);
-
-        var heartrateIcon = View.findDrawableById("CaloriesIcon");
-        heartrateIcon.setText("X");
     }
 
     private function setTimeDisplay() {
         var time = System.getClockTime();
         var hours = time.hour;
         if (!System.getDeviceSettings().is24Hour) {
-        if (hours > 12) {
-            hours = hours - 12;
-        } else if (hours == 0) {
-            hours = 12;
-        }
+            if (hours > 12) {
+                hours = hours - 12;
+            } else if (hours == 0) {
+                hours = 12;
+            }
         }
         var hour = View.findDrawableById("HourDisplay");
         hour.setText(hours.format("%02d"));
