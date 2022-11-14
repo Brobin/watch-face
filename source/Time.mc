@@ -29,12 +29,11 @@ class Time extends WatchUi.Drawable {
         var colonText = ":";
         var minutesText = minutes.format("%02d");
 
-        var boldFont = WatchUi.loadResource(Rez.Fonts.ExoBold);
-        var thinFont = WatchUi.loadResource(Rez.Fonts.ExoLight);
+        var font = WatchUi.loadResource(Rez.Fonts.AldrichBold);
 
-        var hourDimensions = dc.getTextDimensions(hourText, boldFont);
-        var colonWidth = dc.getTextWidthInPixels(colonText, thinFont);
-        var minutesWidth = dc.getTextWidthInPixels(minutesText, boldFont);
+        var hourDimensions = dc.getTextDimensions(hourText, font);
+        var colonWidth = dc.getTextWidthInPixels(colonText, font);
+        var minutesWidth = dc.getTextWidthInPixels(minutesText, font);
 
         var totalWidth = hourDimensions[0] + colonWidth + minutesWidth;
     
@@ -44,10 +43,10 @@ class Time extends WatchUi.Drawable {
         var minutesStart = colonStart + colonWidth;
 
         dc.setColor(getApp().getProperty("HourColor"), Graphics.COLOR_TRANSPARENT);
-        dc.drawText(hourStart, height, boldFont, hourText, Graphics.TEXT_JUSTIFY_LEFT);
-        dc.drawText(colonStart, height, thinFont, colonText, Graphics.TEXT_JUSTIFY_LEFT);
+        dc.drawText(hourStart, height, font, hourText, Graphics.TEXT_JUSTIFY_LEFT);
+        dc.drawText(colonStart, height, font, colonText, Graphics.TEXT_JUSTIFY_LEFT);
 
         dc.setColor(getApp().getProperty("MinuteColor"), Graphics.COLOR_TRANSPARENT);
-        dc.drawText(minutesStart, height, boldFont, minutesText, Graphics.TEXT_JUSTIFY_LEFT);
+        dc.drawText(minutesStart, height, font, minutesText, Graphics.TEXT_JUSTIFY_LEFT);
     }
 }

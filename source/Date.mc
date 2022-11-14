@@ -19,8 +19,8 @@ class Date extends WatchUi.Drawable {
         }
 
         var x = dc.getWidth() / 2;
-        var y = dc.getHeight() * .72;
-        var font = WatchUi.loadResource(Rez.Fonts.ExoSmall);
+        var y = dc.getHeight() * .7;
+        var font = WatchUi.loadResource(Rez.Fonts.AldrichSmall);
         var text = Lang.format(formatString, [date.day_of_week, date.month, date.day]);
 
         dc.setColor(getApp().getProperty("DateColor"), Graphics.COLOR_TRANSPARENT);

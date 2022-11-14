@@ -23,16 +23,23 @@ class HeartRate extends WatchUi.Drawable {
         }
 
         var x = dc.getWidth();
-        var y = dc.getHeight() * .2;
+        var y = dc.getHeight();
 
         var iconFont = WatchUi.loadResource(Rez.Fonts.Icons);
-        var textFont = WatchUi.loadResource(Rez.Fonts.ExoSmall);
+        var textFont = WatchUi.loadResource(Rez.Fonts.AldrichSmall);
 
+        var iconDimensions = dc.getTextDimensions("l", iconFont);
+        var textDimensions = dc.getTextDimensions(heartRateString, textFont);
+
+        var width = iconDimensions[0] + textDimensions[0] + 4;
+
+        var iconStart = (x - width) / 2;
         dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(x * .48, y, iconFont, "l", Graphics.TEXT_JUSTIFY_RIGHT);
+        dc.drawText(iconStart, y *.2, iconFont, "l", Graphics.TEXT_JUSTIFY_LEFT);
 
+        var textStart = iconStart + iconDimensions[0] + 4;
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(x * .52, y, textFont, heartRateString, Graphics.TEXT_JUSTIFY_LEFT);
+        dc.drawText(textStart, y *.21, textFont, heartRateString, Graphics.TEXT_JUSTIFY_LEFT);
 
     }
 }

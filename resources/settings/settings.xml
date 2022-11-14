@@ -1,6 +1,7 @@
 <settings>
 
     <group id="time" title="@Strings.Time">
+
         <setting propertyKey="@Properties.HourColor" title="@Strings.HourColor">
             <settingConfig type="list">
                 <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>

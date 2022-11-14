@@ -1,7 +1,10 @@
 <fonts>
     <font id="Icons" antialias="true" filename="Icons.fnt"/>
     
+    <font id="AldrichBold" antialias="true" filename="AldrichBold.fnt" filter="0123456789:"/>
+    <font id="AldrichSmall" antialias="true" filename="AldrichSmall.fnt"/>
+    
     <font id="ExoBold" antialias="true" filename="ExoBold.fnt" filter="0123456789:"/>
-    <font id="ExoLight" antialias="true" filename="ExoLight.fnt" filter="0123456789:"/>
     <font id="ExoSmall" antialias="true" filename="ExoSmall.fnt"/>
+
 </fonts>

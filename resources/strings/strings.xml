@@ -9,6 +9,10 @@
     <string id="MinuteColor">Minute Color</string>
     <string id="DateColor">Date Color</string>
 
+    <string id="Font">Font</string>
+    <string id="FontAldrich">Aldrich</string>
+    <string id="FontExo">Exo</string>
+
     <string id="ColorWhite">White</string>
     <string id="ColorRed">Red</string>
     <string id="ColorGreen">Green</string>
