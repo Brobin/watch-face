@@ -4,6 +4,7 @@ using Toybox.Application;
 using Toybox.Graphics;
 using Toybox.Lang;
 using Toybox.System;
+using Toybox.Time;
 using Toybox.WatchUi;
 
 using Toybox.Time.Gregorian as Date;
@@ -20,8 +21,7 @@ class AresView extends WatchUi.WatchFace {
 
     function onUpdate(dc) {
         setBatteryDisplay();
-        setHeartRateDisplay();
-        setTimeDisplay();
+        setHeartRateDisplay(); 
         setDateDisplay();
 
         View.onUpdate(dc);
@@ -50,26 +50,6 @@ class AresView extends WatchUi.WatchFace {
 
         var heartrateIcon = View.findDrawableById("HeartRateIcon");
         heartrateIcon.setText("l");
-    }
-
-    private function setTimeDisplay() {
-        var time = System.getClockTime();
-        var hours = time.hour;
-        if (!System.getDeviceSettings().is24Hour) {
-            if (hours > 12) {
-                hours = hours - 12;
-            } else if (hours == 0) {
-                hours = 12;
-            }
-        }
-        var hour = View.findDrawableById("HourDisplay");
-        hour.setText(hours.format("%02d"));
-
-        var colon = View.findDrawableById("ColonDisplay");
-        colon.setText(":");
-
-        var minute = View.findDrawableById("MinuteDisplay");
-        minute.setText(time.min.format("%02d"));
     }
 
     private function setDateDisplay() {
