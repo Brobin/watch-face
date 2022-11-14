@@ -39,10 +39,11 @@ class Time extends WatchUi.Drawable {
         var colonStart = hourStart + hourDimensions[0];
         var minutesStart = colonStart + colonWidth;
 
-        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+        dc.setColor(getApp().getProperty("HourColor"), Graphics.COLOR_TRANSPARENT);
         dc.drawText(hourStart, height, boldFont, hourText, Graphics.TEXT_JUSTIFY_LEFT);
         dc.drawText(colonStart, height, thinFont, colonText, Graphics.TEXT_JUSTIFY_LEFT);
-        dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
+
+        dc.setColor(getApp().getProperty("MinuteColor"), Graphics.COLOR_TRANSPARENT);
         dc.drawText(minutesStart, height, boldFont, minutesText, Graphics.TEXT_JUSTIFY_LEFT);
     }
 }

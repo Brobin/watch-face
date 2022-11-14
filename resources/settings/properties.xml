@@ -1,0 +1,9 @@
+
+<properties>
+
+    <property id="HourColor" type="number">0xFFFFFF</property>
+    <property id="MinuteColor" type="number">0xFF0000</property>
+    <property id="DateColor" type="number">0xFFFFFF</property>
+    <property id="HideMonth" type="boolean">false</property>
+
+</properties>

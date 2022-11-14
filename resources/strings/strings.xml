@@ -1,3 +1,18 @@
 <strings>
     <string id="AppName">Ares</string>
+
+    <string id="Time">Time</string>
+    <string id="Date">Date</string>
+
+    <string id="HourColor">Hour Color</string>
+    <string id="MinuteColor">Minute Color</string>
+    <string id="DateColor">Date Color</string>
+
+    <string id="ColorWhite">White</string>
+    <string id="ColorRed">Red</string>
+    <string id="ColorGreen">Green</string>
+    <string id="ColorBlue">Blue</string>
+
+    <string id="HideMonth">Hide Month</string>
+
 </strings>

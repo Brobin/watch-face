@@ -49,14 +49,20 @@ class AresView extends WatchUi.WatchFace {
         heartrateDisplay.setText(heartRateString);
 
         var heartrateIcon = View.findDrawableById("HeartRateIcon");
-        heartrateIcon.setText("l");
+        heartrateIcon.setText("m");
     }
 
     private function setDateDisplay() {
         var now = Time.now();
         var date = Date.info(now, Time.FORMAT_LONG);
-        var dateString = Lang.format("$1$, $2$ $3$", [ date.day_of_week, date.month, date.day ]);
+        var dateString;
+        if (getApp().getProperty("HideMonth")) {
+            dateString = Lang.format("$1$ $2$", [ date.day_of_week, date.day ]);
+        } else {
+            dateString = Lang.format("$1$, $2$ $3$", [ date.day_of_week, date.month, date.day ]);
+        }
         var dateDisplay = View.findDrawableById("DateDisplay");
+        dateDisplay.setColor(getApp().getProperty("DateColor"));
         dateDisplay.setText(dateString);
     }
 
