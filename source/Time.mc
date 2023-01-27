@@ -29,7 +29,7 @@ class Time extends WatchUi.Drawable {
         var colonText = ":";
         var minutesText = minutes.format("%02d");
 
-        var font = WatchUi.loadResource(Rez.Fonts.AldrichBold);
+        var font = WatchUi.loadResource(Rez.Fonts.QuanticoBold);
 
         var hourDimensions = dc.getTextDimensions(hourText, font);
         var colonWidth = dc.getTextWidthInPixels(colonText, font);
